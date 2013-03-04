@@ -1,0 +1,114 @@
+
+
+
+// @it should support omissions in 2up
+.foo
+  clockhand(1 _)
+  clockhand(_ 1)
+// @expect
+.foo {
+  top:1;          bottom:1;
+         right:1;           left:1;
+}
+
+
+
+// @it should support omissions in 2up with !important
+.foo
+  clockhand(1 _ !important)
+  clockhand(_ 1 !important)
+// @expect
+.foo {
+  top:1 !important;                     bottom:1 !important;
+                    right:1 !important;                      left:1 !important;
+}
+
+
+
+// @it should support omissions in 3up
+.foo
+  clockhand(_ 2 3)
+  clockhand(1 _ 3)
+  clockhand(1 2 _)
+// @expect
+.foo {
+         right:2; bottom:3; left:2;
+  top:1;          bottom:3;
+  top:1; right:2;           left:2;
+}
+
+
+
+// @it should support omissions in 3up with !important
+.foo
+  clockhand(_ 2 3 !important)
+  clockhand(1 _ 3 !important)
+  clockhand(1 2 _ !important)
+// @expect
+.foo {
+                    right:2 !important; bottom:3 !important; left:2 !important;
+  top:1 !important;                     bottom:3 !important;
+  top:1 !important; right:2 !important;                      left:2 !important;
+}
+
+
+
+// @it should support omissions in 4up
+.foo
+  clockhand(_ 2 3 4)
+  clockhand(1 _ 3 4)
+  clockhand(1 2 _ 4)
+  clockhand(1 2 3 _)
+// @expect
+.foo {
+         right:2; bottom:3; left:4;
+  top:1;          bottom:3; left:4;
+  top:1; right:2;           left:4;
+  top:1; right:2; bottom:3;
+}
+
+
+
+// @it should support omissions in 4up with !important
+.foo
+  clockhand(_ 2 3 4 !important)
+  clockhand(1 _ 3 4 !important)
+  clockhand(1 2 _ 4 !important)
+  clockhand(1 2 3 _ !important)
+// @expect
+.foo {
+                    right:2 !important; bottom:3 !important; left:4 !important;
+  top:1 !important;                     bottom:3 !important; left:4 !important;
+  top:1 !important; right:2 !important;                      left:4 !important;
+  top:1 !important; right:2 !important; bottom:3 !important;
+}
+
+
+
+//  @it should not render when all values are omissions
+
+//  This assert shouldn't render anything
+//  in the CSS
+
+.foo
+  clockhand(_)
+  clockhand(_ _)
+  clockhand(_ _ _)
+  clockhand(_ _ _ _)
+
+//  @expect  -------------------------------
+
+
+
+
+
+
+//  @it should not render when all values are omissions with !important
+
+.foo
+  clockhand(_ !important)
+  clockhand(_ _ !important)
+  clockhand(_ _ _ !important)
+  clockhand(_ _ _ _ !important)
+
+//  @expect  -------------------------------
