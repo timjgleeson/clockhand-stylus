@@ -1,0 +1,27 @@
+
+//  Variable for shorthand pattern lookup where the four numbers
+//  follow clockhand: top right bottom left
+
+//  input:                (1)       (1 2)     (1 2 3)   (1 2 3 4)
+//  side assigned:        (1 1 1 1) (1 2 1 2) (1 2 3 2) (1 2 3 4)
+
+values-patterns-lookup = ((0 0 0 0) (0 1 0 1) (0 1 2 1) (0 1 2 3))
+
+
+
+//  Mixin
+//  clockhand(values)
+//  clockhand(values, property-name)
+
+clockhand(values, property-name='', sides=(top right bottom left))
+  if typeof(property-name) isnt 'string'
+    error('property-name must be a string, but got '+property-name+' as a ' + type-of(property-name))
+
+  property-name   = unquote(property-name + '-') if property-name;
+  maybe-important = last(values) is !important ? pop(values) : null ;
+  values-pattern  = values-patterns-lookup[length(values) - 1]
+
+  for i in 0..3
+    value = values[values-pattern[i]]
+    side  = sides[i]
+    {property-name}{side} value maybe-important if value isnt _

@@ -1,0 +1,23 @@
+{
+  "name": "clockhand-stylus",
+  "version": "0.1.0",
+  "description": "TODO",
+  "keywords": [
+    "Stylus",
+    "CSS",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "TODO"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "stylus-test-runner": "git://github.com/jasonkuhrt/stylus-test-runner.git"
+  },
+  "author": "Jason Kuhrt <jasonkuhrt@me.com> (http://jasonkuhrt.com)",
+  "license": "MIT"
+}

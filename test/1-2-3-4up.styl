@@ -1,0 +1,102 @@
+
+
+
+// @it should support 1up
+.foo
+  clockhand(1, 'bar')
+// @expect
+.foo {
+  bar-top    : 1;
+  bar-right  : 1;
+  bar-bottom : 1;
+  bar-left   : 1;
+}
+
+
+
+// @it should support 1up with !important
+.foo
+  clockhand(1 !important, 'bar')
+// @expect
+.foo {
+  bar-top    : 1 !important;
+  bar-right  : 1 !important;
+  bar-bottom : 1 !important;
+  bar-left   : 1 !important;
+}
+
+// @it should support 2up
+.foo
+  clockhand(1 2, 'bar')
+// @expect
+.foo {
+  bar-top    : 1;
+  bar-right  : 2;
+  bar-bottom : 1;
+  bar-left   : 2;
+}
+
+
+
+// @it should support 2up with !important
+.foo
+  clockhand(1 2 !important, 'bar')
+// @expect
+.foo {
+  bar-top    : 1 !important;
+  bar-right  : 2 !important;
+  bar-bottom : 1 !important;
+  bar-left   : 2 !important;
+}
+
+
+
+// @it should support 3up
+.foo
+  clockhand(1 2 3, 'bar')
+// @expect
+.foo {
+  bar-top    : 1;
+  bar-right  : 2;
+  bar-bottom : 3;
+  bar-left   : 2;
+}
+
+
+
+// @it should support 3up with !important
+.foo
+  clockhand(1 2 3 !important, 'bar')
+// @expect
+.foo {
+  bar-top    : 1 !important;
+  bar-right  : 2 !important;
+  bar-bottom : 3 !important;
+  bar-left   : 2 !important;
+}
+
+
+
+// @it should support 4up
+.foo
+  clockhand(1 2 3 4, 'bar')
+// @expect
+.foo {
+  bar-top    : 1;
+  bar-right  : 2;
+  bar-bottom : 3;
+  bar-left   : 4;
+}
+
+
+
+// @it should support 3up with !important
+.foo
+  clockhand(1 2 3 4 !important, 'bar')
+// @expect
+.foo {
+  bar-top    : 1 !important;
+  bar-right  : 2 !important;
+  bar-bottom : 3 !important;
+  bar-left   : 4 !important;
+}
