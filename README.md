@@ -1,4 +1,4 @@
-# clockhand-stylus
+# clockhand-stylus [![Build Status](https://travis-ci.org/jasonkuhrt/clockhand-stylus.png)](https://travis-ci.org/jasonkuhrt/clockhand-stylus)
 
 Stylus mixin for parsing clockhand syntax
 
