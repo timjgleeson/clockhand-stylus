@@ -3,14 +3,29 @@
 Stylus mixin for parsing clockhand syntax
 
 
-## Install/Use:
+### Install/Use:
 ```
 npm install clockhand-stylus
 ```
+.  
+.  
+. 
+### Highlights:
+- 1 2 3 and 4up
+- `_` support (omissions, new concept)
+- `!important` support
+- Consistent with existing CSS behaviour:
+  - https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties
+  - http://reference.sitepoint.com/css/importantdeclarations
+- Built with `clockhand`:
+  - https://github.com/jasonkuhrt/shorthand-edge-omissions-stylus
 
-## Examples:
+.  
+.  
+. 
+### Examples:
 
-#### Sides only:
+##### Sides only:
 ```
 .foo
   clockhand(1)
@@ -25,8 +40,7 @@ npm install clockhand-stylus
   top: 1; right: 2; bottom: 3; left: 4;
 }
 ```
-
-#### Sides with another property:
+##### Sides with another property:
 ```
 .foo
   clockhand(1, 'bar')
@@ -41,8 +55,7 @@ npm install clockhand-stylus
   bar-top: 1; bar-right: 2; bar-bottom: 3; bar-left: 4;
 }
 ```
-
-#### Omissions `_` (new concept, allow skipping of any side)
+##### Omissions `_` (new concept, allow skipping of any side)
 ```
 .foo
   clockhand(_ 2)
@@ -55,27 +68,34 @@ npm install clockhand-stylus
   top: 1; right: 2; left: 4;
 }
 ```
+##### `!important` declaration
+```
+.foo
+  clockhand(1 !important)
+  clockhand(1 2 !important)
+  clockhand(1 2 3 !important)
+  clockhand(1 2 3 4 !important)
 
-
-
-## Raison d'être
-- Low-level abstract mixin especially useful for higher-level mixins
-
-
-
-## Limitations
-
-- This mixin does not support property-style invocation
+.foo {
+  top: 1 !important; right: 1 !important; bottom: 1 !important; left: 1 !important;
+  top: 1 !important; right: 2 !important; bottom: 1 !important; left: 2 !important;
+  top: 1 !important; right: 2 !important; bottom: 3 !important; left: 2 !important;
+  top: 1 !important; right: 2 !important; bottom: 3 !important; left: 4 !important;
+}
+```
+.  
+.  
+.  
+### Limitations
+##### Does not support property-style invocation
 
 ```
-//  Don't do:
-
+// Don't do:
 .foo
   clockhand 1 2 3 4, 'bar'
 
 
-//  Do:
-
+// Do:
 .foo
   clockhand(1 2 3 4, 'bar')
 ```
