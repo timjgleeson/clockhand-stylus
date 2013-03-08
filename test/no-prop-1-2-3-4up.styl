@@ -1,103 +1,32 @@
 
 
 
-// @it should support 1up
+// @it should support 1 2 3 and 4up with sides only
 .foo
   clockhand(1)
-// @expect
-.foo {
-  top    : 1;
-  right  : 1;
-  bottom : 1;
-  left   : 1;
-}
-
-
-
-// @it should support 1up with !important
-.foo
-  clockhand(1 !important)
-// @expect
-.foo {
-  top    : 1 !important;
-  right  : 1 !important;
-  bottom : 1 !important;
-  left   : 1 !important;
-}
-
-// @it should support 2up
-.foo
   clockhand(1 2)
-// @expect
-.foo {
-  top    : 1;
-  right  : 2;
-  bottom : 1;
-  left   : 2;
-}
-
-
-
-// @it should support 2up with !important
-.foo
-  clockhand(1 2 !important)
-// @expect
-.foo {
-  top    : 1 !important;
-  right  : 2 !important;
-  bottom : 1 !important;
-  left   : 2 !important;
-}
-
-
-
-// @it should support 3up
-.foo
   clockhand(1 2 3)
-// @expect
-.foo {
-  top    : 1;
-  right  : 2;
-  bottom : 3;
-  left   : 2;
-}
-
-
-
-// @it should support 3up with !important
-.foo
-  clockhand(1 2 3 !important)
-// @expect
-.foo {
-  top    : 1 !important;
-  right  : 2 !important;
-  bottom : 3 !important;
-  left   : 2 !important;
-}
-
-
-
-// @it should support 4up
-.foo
   clockhand(1 2 3 4)
 // @expect
 .foo {
-  top    : 1;
-  right  : 2;
-  bottom : 3;
-  left   : 4;
+  top: 1; right: 1; bottom: 1; left: 1;
+  top: 1; right: 2; bottom: 1; left: 2;
+  top: 1; right: 2; bottom: 3; left: 2;
+  top: 1; right: 2; bottom: 3; left: 4;
 }
 
 
 
-// @it should support 3up with !important
+// @it should support 1 2 3 and 4up with sides only and !important
 .foo
+  clockhand(1 !important)
+  clockhand(1 2 !important)
+  clockhand(1 2 3 !important)
   clockhand(1 2 3 4 !important)
 // @expect
 .foo {
-  top    : 1 !important;
-  right  : 2 !important;
-  bottom : 3 !important;
-  left   : 4 !important;
+  top: 1 !important; right: 1 !important; bottom: 1 !important; left: 1 !important;
+  top: 1 !important; right: 2 !important; bottom: 1 !important; left: 2 !important;
+  top: 1 !important; right: 2 !important; bottom: 3 !important; left: 2 !important;
+  top: 1 !important; right: 2 !important; bottom: 3 !important; left: 4 !important;
 }
-

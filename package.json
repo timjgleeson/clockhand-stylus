@@ -1,15 +1,17 @@
 {
   "name": "clockhand-stylus",
   "version": "0.1.0",
-  "description": "TODO",
+  "description": "Stylus mixin for parsing clockhand syntax",
   "keywords": [
     "Stylus",
     "CSS",
+    "shorthand",
+    "clockhand",
     "utility"
   ],
   "repository": {
     "type": "git",
-    "url": "TODO"
+    "url": "git://github.com/jasonkuhrt/clockhand-stylus.git"
   },
   "main": "index.js",
   "scripts": {
