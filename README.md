@@ -1,31 +1,65 @@
 # clockhand-stylus [![Build Status](https://travis-ci.org/jasonkuhrt/clockhand-stylus.png)](https://travis-ci.org/jasonkuhrt/clockhand-stylus)
 
 Stylus mixin for parsing clockhand syntax
+```
+clockhand(4 8 _ 1 !important)
+```
 
 
-### Install/Use:
+### Install:
 ```
 npm install clockhand-stylus
 ```
 .  
 .  
-. 
+.  
 ### Highlights:
-- 1 2 3 and 4up
-- `_` support (omissions, new concept)
-- `!important` support
-- Consistent with existing CSS behaviour:
+- Support for CSS box-edge-shorthand
   - https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties
+- Support for `!important`
   - http://reference.sitepoint.com/css/importantdeclarations
-- Built with `clockhand`:
+- Introduces `_` omissions
+- Used by:
   - https://github.com/jasonkuhrt/shorthand-edge-omissions-stylus
+  - https://github.com/jasonkuhrt/shorthand-position-stylus
 
 .  
 .  
-. 
+.  
+### Documentation:
+
+`clockhand()` supports, everything native CSS box-edge-shorthand does: https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties
+See section "Shorthands handling properties related to edges of a box ..."
+
+```
+clockhand(<stylus-clockhand-shorthand>, [<String>property-name])
+
+eg: clockhand(1 3 _ 1, 'margin') || clockhand(4)
+```
+
+##### `<stylus-clockhand-shorthand>`
+```
+val||_  [val||_]  [val||_]  [val||_]
+
+eg: 3 || 3 2 || 4 4 4 || 98 45 2 1 || _ 2 || 4 _ || 45 !important || 1 3 _ !important
+```
+`_` permits you to opt out of an edge (examples illustrate below)
+
+
+##### <String>property-name
+```
+eg: 'foo' || 'margin' || 'padding'
+
+```
+
+
+
+
+
+```
 ### Examples:
 
-##### Sides only:
+##### Edges only:
 ```
 .foo
   clockhand(1)
@@ -40,7 +74,7 @@ npm install clockhand-stylus
   top: 1; right: 2; bottom: 3; left: 4;
 }
 ```
-##### Sides with another property:
+##### Edges with another property:
 ```
 .foo
   clockhand(1, 'bar')
@@ -55,7 +89,7 @@ npm install clockhand-stylus
   bar-top: 1; bar-right: 2; bar-bottom: 3; bar-left: 4;
 }
 ```
-##### Omissions `_` (new concept, allow skipping of any side)
+##### Omissions `_` (omit value for a particular edge)
 ```
 .foo
   clockhand(_ 2)
