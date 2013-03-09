@@ -2,7 +2,9 @@
 
 Stylus mixin for parsing clockhand syntax
 ```
-clockhand(4 8 _ 1 !important)
+.foo { clockhand(4 8 _ 1 !important); }
+
+.foo { top: 4 !important; right: 8 !important; left: 1 !important; }
 ```
 
 
@@ -10,10 +12,8 @@ clockhand(4 8 _ 1 !important)
 ```
 npm install clockhand-stylus
 ```
-.  
-.  
-.  
-### Highlights:
+### Summary:
+- Stylus mixin (not function)
 - Support for CSS box-edge-shorthand
   - https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties
 - Support for `!important`
@@ -26,10 +26,8 @@ npm install clockhand-stylus
 .  
 .  
 .  
-### Documentation:
 
-`clockhand()` supports, everything native CSS box-edge-shorthand does: https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties
-See section "Shorthands handling properties related to edges of a box ..."
+### Documentation:
 
 ```
 clockhand(<stylus-clockhand-shorthand>, [<String>property-name])
@@ -43,20 +41,32 @@ val||_  [val||_]  [val||_]  [val||_]
 
 eg: 3 || 3 2 || 4 4 4 || 98 45 2 1 || _ 2 || 4 _ || 45 !important || 1 3 _ !important
 ```
+Everything native CSS box-edge-shorthand does: https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties is supported.
+See section "Shorthands handling properties related to edges of a box ..."
+
 `_` permits you to opt out of an edge (examples illustrate below)
 
+##### property-style invocation
+```
+// Don't do:
+.foo
+  clockhand 1 2 3 4, 'bar'
 
-##### <String>property-name
+
+// Do:
+.foo
+  clockhand (1 2 3 4) 'bar'
+```
+
+
+##### `<String>property-name`
 ```
 eg: 'foo' || 'margin' || 'padding'
 
 ```
-
-
-
-
-
-```
+.  
+.  
+.  
 ### Examples:
 
 ##### Edges only:
@@ -116,20 +126,4 @@ eg: 'foo' || 'margin' || 'padding'
   top: 1 !important; right: 2 !important; bottom: 3 !important; left: 2 !important;
   top: 1 !important; right: 2 !important; bottom: 3 !important; left: 4 !important;
 }
-```
-.  
-.  
-.  
-### Limitations
-##### Does not support property-style invocation
-
-```
-// Don't do:
-.foo
-  clockhand 1 2 3 4, 'bar'
-
-
-// Do:
-.foo
-  clockhand(1 2 3 4, 'bar')
 ```
