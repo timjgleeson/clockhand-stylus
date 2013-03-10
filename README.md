@@ -26,7 +26,7 @@ Stylus mixin for parsing clockhand syntax
 
 ### Install:
 ```
-npm install clockhand-stylus
+npm install clockhand-stylus --save
 ```
 .  
 .  
