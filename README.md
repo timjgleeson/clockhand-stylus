@@ -9,7 +9,7 @@ Stylus mixin for parsing clockhand syntax
 .foo { top: 4 !important; right: 8 !important; left: 1 !important; }
 ```
 ### Summary
-- Stylus mixin (not function)
+- [Stylus](https://github.com/learnboost/stylus) [mixin](https://github.com/LearnBoost/stylus/blob/master/docs/mixins.md) (not [function](https://github.com/LearnBoost/stylus/blob/master/docs/functions.md))
 - Support for CSS box-edge-shorthand
   - https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties
 - Support for `!important`
