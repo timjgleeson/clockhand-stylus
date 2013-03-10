@@ -1,18 +1,14 @@
 # clockhand-stylus [![Build Status](https://travis-ci.org/jasonkuhrt/clockhand-stylus.png)](https://travis-ci.org/jasonkuhrt/clockhand-stylus)
 
 Stylus mixin for parsing clockhand syntax
+
+### Preview
 ```
 .foo { clockhand(4 8 _ 1 !important); }
 
 .foo { top: 4 !important; right: 8 !important; left: 1 !important; }
 ```
-
-
-### Install:
-```
-npm install clockhand-stylus
-```
-### Summary:
+### Summary
 - Stylus mixin (not function)
 - Support for CSS box-edge-shorthand
   - https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties
@@ -22,7 +18,16 @@ npm install clockhand-stylus
 - Used by:
   - https://github.com/jasonkuhrt/shorthand-edge-omissions-stylus
   - https://github.com/jasonkuhrt/shorthand-position-stylus
+  - Fork + add your package here
 
+.  
+.  
+.  
+
+### Install:
+```
+npm install clockhand-stylus
+```
 .  
 .  
 .  
